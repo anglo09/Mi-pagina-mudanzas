@@ -1,0 +1,155 @@
+.hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/imagen1.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .form-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+/* Botón flotante de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+    animation: pulse 1.5s infinite;
+    cursor: pointer;
+}
+
+.whatsapp-float:hover {
+    background-color: #20b358;
+}
+
+/* Animación de pulso */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* Tooltip con degradado + ícono */
+.whatsapp-float::after {
+    content: "💬 " attr(data-tooltip);
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    background: linear-gradient(135deg, #25d366, #20b358);
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Flechita debajo del tooltip */
+.whatsapp-float::before {
+    content: "";
+    position: absolute;
+    bottom: 60px;
+    right: 15px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: #25d366 transparent transparent transparent;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar tooltip con animación bounce */
+.whatsapp-float:hover::after,
+.whatsapp-float:hover::before {
+    opacity: 1;
+    transform: translateY(0);
+    animation: bounce 0.6s ease;
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+    0%   { transform: translateY(10px); }
+    40%  { transform: translateY(-6px); }
+    60%  { transform: translateY(3px); }
+    80%  { transform: translateY(-2px); }
+    100% { transform: translateY(0); }
+}
+/* Facebook */
+.icon-facebook {
+    color: #1877F2; /* azul oficial */
+    transition: transform 0.3s ease;
+}
+.icon-facebook:hover {
+    color: #0d65d9;
+    transform: scale(1.2);
+}
+
+/* Instagram (degradado con truco en el ícono) */
+.icon-instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease;
+}
+.icon-instagram:hover {
+    transform: scale(1.2);
+}
+
+/* Twitter */
+.icon-twitter {
+    color: #1DA1F2;
+    transition: transform 0.3s ease;
+}
+.icon-twitter:hover {
+    color: #0d8ddb;
+    transform: scale(1.2);
+}
+
+/* LinkedIn */
+.icon-linkedin {
+    color: #0A66C2;
+    transition: transform 0.3s ease;
+}
+.icon-linkedin:hover {
+    color: #084a91;
+    transform: scale(1.2);
+}
+
+/* WhatsApp */
+.icon-whatsapp {
+    color: #25D366;
+    transition: transform 0.3s ease;
+}
+.icon-whatsapp:hover {
+    color: #20b358;
+    transform: scale(1.2);
+}       
